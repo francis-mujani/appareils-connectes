@@ -6,7 +6,6 @@ const getIndex = (req, res) => {
         if(err) console.log(err);
         res.render('index', {appareils: appareils});
     });
-    
 }
 
 // controller form page
@@ -16,18 +15,17 @@ const getForm = (req, res) => {
 
 // controller post data in database
 const postForm = (req, res) => {
+    const { name, status, color, type, puissance, description } = req.body;
     const newAppareil = new Appareils({
-        //const (name, allumer, eteint, color, puissance, description ) = req.body;
-        name: req.body.name,
-        status: req.body.status,
-        //statusEteint: req.body.Eteint,
+        name: name,
+        status: status,
         types: [{
-                type: req.body.type
+                type: type
         }],
-        color: req.body.color,
-        puissance: req.body.puissance,
+        color: color,
+        puissance: puissance,
         prix: req.body.prix,
-        description: req.body.description,
+        description: description,
         });
         newAppareil.save((err, success) => {
             if(err){
@@ -55,14 +53,6 @@ const getDelete = (req, res) => {
         });
     }
 
-/*
-const getDelete = (req, res) => {
-    const { id } = req.params
-    Appareils.findByIdAndDelete(id).then(() => {
-        res.redirect('index');
-    })
-}
-*/
 // importation de mes controllers
 module.exports = {
     getIndex: getIndex,
