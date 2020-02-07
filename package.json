@@ -1,0 +1,24 @@
+{
+  "name": "appareils-connectes",
+  "version": "1.0.0",
+  "description": "My first app ",
+  "main": "server",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "html2pug": "html2pug < html2pug.html > html2pug.pug -f"
+  },
+  "author": "francis mujani",
+  "license": "ISC",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
+    "html2pug": "^4.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.8.11",
+    "nodemon": "^2.0.2",
+    "pug": "^2.0.4"
+  }
+}
