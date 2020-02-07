@@ -13,17 +13,18 @@ const getEdit = (req, res) => {
 }
 
 const putEdit = (req, res) => {
+    const { name, status, color, type, puissance, description } = req.body;
     const { id } = req.params;
     Appareils.findByIdAndUpdate(id, {
-        name: req.body.name,
-        status: req.body.status,
+        name: name,
+        status: status,
         types: [{
-                type: req.body.type
+                type: type
         }],
-        color: req.body.color,
-        puissance: req.body.puissance,
-        prix: req.body.prix,
-        description: req.body.description,
+        color: color,
+        puissance: puissance,
+        prix: prix,
+        description: description,
         },
         (err) => {
             if(err) console.log(err);
